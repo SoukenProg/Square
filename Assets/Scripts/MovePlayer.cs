@@ -21,9 +21,11 @@ public class MovePlayer : MonoBehaviour
             {
                 case TouchPhase.Began:
                     istouched = true;
+                    Debug.Log("Touched");
                     break;
 
                 case TouchPhase.Moved:
+                    Debug.Log("Moving");
                     Vector3 touchPoint_screen = new Vector3(touch.position.x, touch.position.y, 0);
                     Vector3 screenPos = Camera.main.ScreenToWorldPoint(touchPoint_screen);
                     this.transform.position = screenPos;
@@ -31,6 +33,7 @@ public class MovePlayer : MonoBehaviour
 
                 case TouchPhase.Ended:
                     istouched = false;
+                    Debug.Log("Released");
                     break;
             }
         }
