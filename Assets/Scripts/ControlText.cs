@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class ControlText : MonoBehaviour
 {
     public GameObject Text_object = null;
+    MovePlayer mv;
     // Start is called before the first frame update
     void Start()
     {
-        
+        mv = GetComponent<MovePlayer>();   
     }
 
     // Update is called once per frame
@@ -19,6 +20,7 @@ public class ControlText : MonoBehaviour
         if (this.transform.position.x == 716.8f)
         {
             text.text = "Cleared!!!";
+            MovePlayer.minLimitx = 716.8f;
         }
     }
 }

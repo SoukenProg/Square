@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     bool istouched;
-    float minLimitx, maxLimitx;
+    public  static float minLimitx, maxLimitx;
     
     // Start is called before the first frame update
     void Start()
