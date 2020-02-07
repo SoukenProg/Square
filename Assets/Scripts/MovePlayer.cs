@@ -25,7 +25,8 @@ public class MovePlayer : MonoBehaviour
 
                 case TouchPhase.Moved:
                     Vector3 touchPoint_screen = new Vector3(touch.position.x, touch.position.y, 0);
-                    this.transform.position = touchPoint_screen;
+                    Vector3 screenPos = Camera.main.ScreenToWorldPoint(touchPoint_screen);
+                    this.transform.position = screenPos;
                     break;
 
                 case TouchPhase.Ended:
