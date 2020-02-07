@@ -5,9 +5,13 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     bool istouched;
+    float minLimitx, maxLimitx;
+    
     // Start is called before the first frame update
     void Start()
     {
+        minLimitx = -716.8f;
+        maxLimitx = 716.8f;
         istouched = false;
     }
 
@@ -37,11 +41,22 @@ public class MovePlayer : MonoBehaviour
                     break;
             }
         }
-            this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x, -716.8f, 716.8f),
+            this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x, minLimitx, maxLimitx),
             Mathf.Clamp(this.transform.position.y,-89.6f, -89.6f),
            Mathf.Clamp(this.transform.position.y, -1.0f, -1.0f));
     }
-    void FixedUpdate()
+
+    void OnCollisionEnter(Collision other)
+    {
+        Vector3 Pos;
+        foreach (ContactPoint point in other.contacts)
+        {
+            Pos = point.point;
+            Debug.Log(Pos);
+        }
+    }
+
+    void OnCollisionStay()
     {
 
     }
