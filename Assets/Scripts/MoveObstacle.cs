@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MoveObstacle : MonoBehaviour
 {
-    Rigidbody rb;
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;//回転とZ座標を固定
+        rb = GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;//回転を固定
     }
 
     // Update is called once per frame

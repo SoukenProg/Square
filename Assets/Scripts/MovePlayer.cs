@@ -5,14 +5,14 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     bool istouched;
-    Rigidbody rb;
+    Rigidbody2D rb;
     public  static float minLimitx, maxLimitx;
     
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;//回転を固定
+        rb = GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;//回転を固定
         minLimitx = -716.8f;
         maxLimitx = 716.8f;
         istouched = false;
