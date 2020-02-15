@@ -5,11 +5,14 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     bool istouched;
+    Rigidbody rb;
     public  static float minLimitx, maxLimitx;
     
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;//回転を固定
         minLimitx = -716.8f;
         maxLimitx = 716.8f;
         istouched = false;
@@ -56,8 +59,4 @@ public class MovePlayer : MonoBehaviour
         }
     }
 
-    void OnCollisionStay()
-    {
-
-    }
 }
