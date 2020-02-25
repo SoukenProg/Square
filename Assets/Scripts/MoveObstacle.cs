@@ -5,14 +5,15 @@ using UnityEngine;
 public class MoveObstacle : MonoBehaviour
 {
     Vector3 Scale,Size;
+    Transform tr;
     Rigidbody2D rb;
     static float minLimitx, maxLimitx, minLimity, maxLimity;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        Scale = transform.position;
+        tr = GetComponent<Transform>();
+        Scale = tr.position;
         Size = GetComponent<Transform>().lossyScale;
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;//回転を固定

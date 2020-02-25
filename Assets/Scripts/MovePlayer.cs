@@ -6,7 +6,7 @@ public class MovePlayer : MonoBehaviour
 {
     bool istouched;
     Rigidbody2D rb;
-    public  static float minLimitx, maxLimitx;
+    public static float minLimitx, maxLimitx;
     
     // Start is called before the first frame update
     void Start()
@@ -56,6 +56,7 @@ public class MovePlayer : MonoBehaviour
         {
             Pos = point.point;
             Debug.Log(Pos);
+
         }
     }
 
