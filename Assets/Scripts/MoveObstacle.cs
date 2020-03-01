@@ -42,6 +42,7 @@ public class MoveObstacle : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
+            Vector2 WorldPoint = Camera.main.ScreenToWorldPoint(touch.position);
             switch (touch.phase)
             {
                 case TouchPhase.Began:
